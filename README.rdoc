@@ -1,6 +1,9 @@
 == Run
 
-```
- puma -b tcp://0.0.0.0:7000 -w 5
-```
+
+docker-compose up -d
+
+docker build -t zookeper-demo ./
+docker run -ti -e ZOOKEEPERS="10.1.0.2:21811" -p 3000:3000 zookeeper-demo /bin/bash
+bundle exec rails server -b 0.0.0.0 -p 3000
 
